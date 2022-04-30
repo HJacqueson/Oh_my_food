@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood",
+  "version": "1.0.0",
+  "description": "Projet numéro 3 de la formation Développement Web d'OpenClassrooms",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:.public/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HJacqueson/Oh_my_food.git"
+  },
+  "author": "Hervé",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HJacqueson/Oh_my_food/issues"
+  },
+  "homepage": "https://github.com/HJacqueson/Oh_my_food#readme"
+}
