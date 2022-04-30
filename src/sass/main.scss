@@ -1,1 +1,10 @@
 @import "./utils/variables";
+
+.header {
+    background: #15DEA5;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    }

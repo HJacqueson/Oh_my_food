@@ -4,7 +4,8 @@
   "description": "Projet numéro 3 de la formation Développement Web d'OpenClassrooms",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./src/sass/main.scss:.public/css/style.css"
+    "sass": "sass --watch ./src/sass/main.scss:.public/css/style.css",
+    "prefix": "postcss .public/css/style.css --use autoprefixer -d .public/css/prefixed/"
   },
   "repository": {
     "type": "git",
@@ -12,6 +13,7 @@
   },
   "author": "Hervé",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/HJacqueson/Oh_my_food/issues"
   },
