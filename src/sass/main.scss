@@ -2,9 +2,27 @@
 @import "./utils/variables";
 @import "./base/base.scss";
 
+$border-radius: 35px;
+
+@mixin display-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin box-shadow {
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+
 *
 {
-    list-style-type: none;
+    text-decoration: none;
+    object-fit: cover;
+}
+
+a {
+    color: #000;
 }
 
 body
@@ -14,6 +32,7 @@ body
 }
 
 .header {
+    text-align: center;
    
     &__title-omf
     {
@@ -21,7 +40,25 @@ body
     }
 }
 
+.explore {
+    @include display-flex;
+
+    &__title {
+        text-align: center;
+    }
+
+    &__paragraphe {
+        text-align: center;
+    }
+
+    &__link {
+
+    }
+}
+
 .location {
+    @include display-flex;
+    flex-direction: row;
     
     &__icon{
 
@@ -29,13 +66,13 @@ body
 }
 
 .guide {
-   
+   @include display-flex;
     &__list {
 
     }
 
     &__element {
-
+        @include box-shadow;
     }
 
     &__icon {
@@ -44,20 +81,37 @@ body
 }
 
 .etablissements{
-    
+    @include display-flex;
     &__title {
 
     }
 }
 
 .restaurants {
-
+    @include display-flex;
 }
 
 .restaurant {
+    @include display-flex;
+    @include box-shadow;
+    width: 85%;
+    height: 20%;
+    border-radius: $border-radius;
+    margin-bottom: 5%;
+
+    &__img {
+        border-radius: $border-radius $border-radius 0 0;
+        width: 40rem;
+        height: 5rem;
+        max-width: 100%;
+        position: relative;
+    }
 
     &__new {
-
+        position: absolute;
+        bottom: 110px;
+        right: 50px;
+        background-color: #99e2d0;
     }
 
     &__pres {
@@ -86,13 +140,13 @@ body
 }
 
 .footer {
-
+    background-color: #353535;
     &__tite-omf {
 
     }
 
     &__list {
-
+        list-style-type: none;
     }
 
     &__element {
@@ -104,7 +158,7 @@ body
     }
 
     &__link {
-        
+
     }
 }
 
