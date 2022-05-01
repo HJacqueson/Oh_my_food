@@ -1,10 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
 @import "./utils/variables";
+@import "./base/base.scss";
+
+*
+{
+    list-style-type: none;
+}
+
+body
+{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
 
 .header {
-    background: #15DEA5;
-    height: 10rem;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
+   
+    &__title-omf
+    {
+        font-size: 1rem;
     }
+}
+
+.location {
+    
+    &__icon{
+
+    }
+}
+
+.guide {
+   
+    &__list {
+
+    }
+
+    &__element {
+
+    }
+
+    &__icon {
+
+    }
+}
+
+.etablissements{
+    
+    &__title {
+
+    }
+}
+
+.restaurants {
+
+}
+
+.restaurant {
+
+    &__new {
+
+    }
+
+    &__pres {
+
+    }
+
+    &__title {
+
+    }
+
+    &__paragraph {
+
+    }
+
+    &__icon {
+
+    }
+
+    &__icon-1 {
+
+    }
+
+    &__icon-2 {
+
+    }
+}
+
+.footer {
+
+    &__tite-omf {
+
+    }
+
+    &__list {
+
+    }
+
+    &__element {
+
+    }
+
+    &__icon {
+
+    }
+
+    &__link {
+        
+    }
+}
+
+
