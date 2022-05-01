@@ -17,6 +17,7 @@ $border-radius: 35px;
 
 *
 {
+    list-style: none;
     text-decoration: none;
     object-fit: cover;
 }
@@ -68,11 +69,23 @@ body
 .guide {
    @include display-flex;
     &__list {
+        counter-reset: compteListe;
+
 
     }
 
     &__element {
         @include box-shadow;
+        &::before{
+            @include display-flex;
+            flex-direction: row;
+            counter-increment: compteListe;
+            content: counter(compteListe) " ";
+            height: 1.5rem;
+            width: 1.5rem;
+            background-color: purple;
+            color: #fff;
+        }
     }
 
     &__icon {
@@ -92,26 +105,27 @@ body
 }
 
 .restaurant {
-    @include display-flex;
     @include box-shadow;
     width: 85%;
     height: 20%;
     border-radius: $border-radius;
     margin-bottom: 5%;
+    position: relative;
 
     &__img {
         border-radius: $border-radius $border-radius 0 0;
         width: 40rem;
         height: 5rem;
         max-width: 100%;
-        position: relative;
     }
 
     &__new {
+        background-color: #99E2D0;
+        color: #1b6150;
+        padding: 0.5rem;
         position: absolute;
-        bottom: 110px;
-        right: 50px;
-        background-color: #99e2d0;
+        top: 1rem;
+        right: 0.75rem;
     }
 
     &__pres {
@@ -146,7 +160,7 @@ body
     }
 
     &__list {
-        list-style-type: none;
+
     }
 
     &__element {

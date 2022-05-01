@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap");
 * {
+  list-style: none;
   text-decoration: none;
   object-fit: cover;
 }
@@ -45,8 +46,24 @@ body {
   justify-content: center;
   align-items: center;
 }
+.guide__list {
+  counter-reset: compteListe;
+}
 .guide__element {
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+.guide__element::before {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  counter-increment: compteListe;
+  content: counter(compteListe) " ";
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: purple;
+  color: #fff;
 }
 .etablissements {
   display: flex;
@@ -62,34 +79,29 @@ body {
 }
 
 .restaurant {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
   width: 85%;
   height: 20%;
   border-radius: 35px;
   margin-bottom: 5%;
+  position: relative;
 }
 .restaurant__img {
   border-radius: 35px 35px 0 0;
   width: 40rem;
   height: 5rem;
   max-width: 100%;
-  position: relative;
 }
 .restaurant__new {
+  background-color: #99E2D0;
+  color: #1b6150;
+  padding: 0.5rem;
   position: absolute;
-  bottom: 110px;
-  right: 50px;
-  background-color: #99e2d0;
+  top: 1rem;
+  right: 0.75rem;
 }
 .footer {
   background-color: #353535;
-}
-.footer__list {
-  list-style-type: none;
 }
 
 /*# sourceMappingURL=style.css.map */
