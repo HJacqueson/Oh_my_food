@@ -16,54 +16,74 @@ body {
 
 .header {
   text-align: center;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  position: relative;
 }
 .header__title-omf {
-  font-size: 1rem;
+  font-family: "shrikhand", sans-serif;
+  margin: 0;
 }
 
-.explore {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.explore__title {
-  text-align: center;
-}
-.explore__paragraphe {
-  text-align: center;
-}
 .location {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  background-color: #eaeaea;
 }
+.explore {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f6f6;
+  text-align: center;
+  padding: 1rem 1rem 3.5rem 1rem;
+}
+.explore__paragraphe {
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+.explore__btn {
+  background-image: linear-gradient(#e972da, #a45cdc);
+  padding: 1rem 2rem;
+  color: #fff;
+  border-radius: 25px;
+}
+
 .guide {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 .guide__list {
   counter-reset: compteListe;
+  width: 80%;
 }
 .guide__element {
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  display: flex;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 25px;
+  background-color: #f6f6f6;
+  position: relative;
 }
 .guide__element::before {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
   counter-increment: compteListe;
   content: counter(compteListe) " ";
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 1.5rem;
   width: 1.5rem;
-  background-color: purple;
+  left: -1rem;
+  margin: 1rem auto;
+  background-color: #9356dc;
   color: #fff;
+  border-radius: 15px;
+  position: absolute;
 }
 .etablissements {
   display: flex;
@@ -76,6 +96,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #f6f6f6;
 }
 
 .restaurant {

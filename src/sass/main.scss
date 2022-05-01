@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
+
 @import "./utils/variables";
 @import "./base/base.scss";
 
@@ -34,57 +35,81 @@ body
 
 .header {
     text-align: center;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+    padding: 1rem;
+    position: relative;
    
     &__title-omf
     {
-        font-size: 1rem;
-    }
-}
-
-.explore {
-    @include display-flex;
-
-    &__title {
-        text-align: center;
-    }
-
-    &__paragraphe {
-        text-align: center;
-    }
-
-    &__link {
-
+        font-family: 'shrikhand', sans-serif;
+        margin: 0;
     }
 }
 
 .location {
     @include display-flex;
     flex-direction: row;
+    background-color: #eaeaea;
     
     &__icon{
 
     }
 }
 
+.explore {
+    @include display-flex;
+    background-color: #f6f6f6;
+    text-align: center;
+    padding: 1rem 1rem 3.5rem 1rem;
+
+    &__title {
+    }
+
+    &__paragraphe {
+        font-weight: 300;
+        margin-bottom: 2rem;
+    }
+
+    &__btn {
+        background-image: linear-gradient(#e972da, #a45cdc);
+        padding: 1rem 2rem;
+        color: #fff;
+        border-radius: 25px;
+    }
+}
+
 .guide {
-   @include display-flex;
+    display: flex;
+    flex-direction: column;
     &__list {
         counter-reset: compteListe;
+        width: 80%;
 
 
     }
 
     &__element {
         @include box-shadow;
+        display: flex;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border-radius: 25px;
+        background-color: #f6f6f6;
+        position: relative;
         &::before{
-            @include display-flex;
-            flex-direction: row;
             counter-increment: compteListe;
             content: counter(compteListe) " ";
+            display: flex;
+            justify-content: center;
+            align-items: center;
             height: 1.5rem;
             width: 1.5rem;
-            background-color: purple;
+            left: -1rem;
+            margin: 1rem auto;
+            background-color: #9356dc;
             color: #fff;
+            border-radius: 15px;
+            position: absolute;
         }
     }
 
@@ -102,6 +127,7 @@ body
 
 .restaurants {
     @include display-flex;
+    background-color: #f6f6f6
 }
 
 .restaurant {
