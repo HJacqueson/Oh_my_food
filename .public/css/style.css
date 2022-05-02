@@ -15,6 +15,9 @@ body {
 }
 
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
   padding: 1rem;
@@ -23,16 +26,31 @@ body {
 .header__title-omf {
   font-family: "shrikhand", sans-serif;
   margin: 0;
+  font-weight: 100;
+}
+.header__arrow {
+  font-size: 1.5rem;
+  position: absolute;
+  left: 2rem;
+  top: 1.7rem;
 }
 
-.location {
+.local {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   background-color: #eaeaea;
+  font-size: 1.2rem;
 }
+.local__icon {
+  margin: 0 1rem 0.2rem 0;
+}
+.local__paragraphe {
+  margin-right: 0.5rem;
+}
+
 .explore {
   display: flex;
   flex-direction: column;
@@ -51,24 +69,33 @@ body {
   padding: 1rem 2rem;
   color: #fff;
   border-radius: 25px;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+}
+
+.block {
+  margin: auto;
+  position: relative;
 }
 
 .guide {
-  display: flex;
-  flex-direction: column;
+  padding: 2rem 1rem;
+}
+.guide__title {
+  margin-bottom: 2rem;
 }
 .guide__list {
   counter-reset: compteListe;
-  width: 80%;
+  padding: 0;
+  margin: 0;
 }
 .guide__element {
-  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
   display: flex;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  padding: 1.6rem;
+  margin: 0 0 1.5rem 1rem;
   border-radius: 25px;
   background-color: #f6f6f6;
   position: relative;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.15);
 }
 .guide__element::before {
   counter-increment: compteListe;
@@ -79,38 +106,48 @@ body {
   height: 1.5rem;
   width: 1.5rem;
   left: -1rem;
-  margin: 1rem auto;
   background-color: #9356dc;
   color: #fff;
   border-radius: 15px;
   position: absolute;
 }
+.guide__element:hover {
+  background-color: rgba(147, 86, 220, 0.2);
+}
+.guide__element:hover .guide__icon {
+  color: rgb(147, 86, 220);
+}
+.guide__paragraphe {
+  margin: 0;
+}
+.guide__icon {
+  margin-right: 1rem;
+  color: #7e7e7e;
+  font-size: 1.3rem;
+}
+
 .etablissements {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: #f6f6f6;
+  padding: 2rem 1rem;
 }
 .restaurants {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f6f6f6;
 }
 
 .restaurant {
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
-  width: 85%;
   height: 20%;
-  border-radius: 35px;
-  margin-bottom: 5%;
+  border-radius: 15px;
+  margin-bottom: 1.5rem;
   position: relative;
 }
 .restaurant__img {
-  border-radius: 35px 35px 0 0;
+  border-radius: 15px 15px 0 0;
   width: 40rem;
-  height: 5rem;
+  height: 10rem;
   max-width: 100%;
 }
 .restaurant__new {
@@ -121,8 +158,111 @@ body {
   top: 1rem;
   right: 0.75rem;
 }
+.restaurant__txt {
+  padding: 1rem;
+}
+.restaurant__title {
+  margin: 0 0 0.2rem 0;
+  font-size: 1.3rem;
+}
+.restaurant__paragraph {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+.restaurant__icon {
+  position: relative;
+  display: flex;
+}
+.restaurant__icon-1 {
+  position: absolute;
+  bottom: 2rem;
+  right: 1rem;
+}
+.restaurant__icon-2 {
+  position: absolute;
+  bottom: 2rem;
+  right: 3rem;
+}
+
 .footer {
   background-color: #353535;
+  padding: 1rem;
+}
+.footer__title-omf {
+  font-family: "Shrikhand";
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+.footer__list {
+  padding: 0;
+}
+.footer__element {
+  margin-bottom: 1rem;
+}
+.footer__icon {
+  width: 1rem;
+  margin-right: 0.3rem;
+  color: #fff;
+}
+.footer__link {
+  color: #fff;
+}
+
+.menu-page {
+  background: #f6f6f6;
+}
+
+.top-img__img {
+  height: 15rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.menu {
+  position: relative;
+  padding: 1rem;
+  margin-top: -2.5rem;
+  border-radius: 35px 35px 0 0;
+  background: #f6f6f6;
+}
+.menu__title {
+  font-family: "Shrikhand", sans-serif;
+  font-size: 1.5rem;
+  margin: 0.7rem;
+  font-weight: 100;
+}
+
+.listmenu {
+  padding: 0 1rem;
+}
+.listmenu__title {
+  text-transform: uppercase;
+  font-weight: 300;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+.listmenu__title::after {
+  content: "";
+  position: absolute;
+  width: 3rem;
+  height: 0.2rem;
+  background-color: #99e2d0;
+  left: 0;
+  bottom: 0;
+}
+
+.item {
+  display: flex;
+  padding: 1rem;
+  background: #fff;
+  margin: 1rem 0;
+}
+.item__txt {
+  flex-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /*# sourceMappingURL=style.css.map */

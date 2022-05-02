@@ -3,7 +3,8 @@
 @import "./utils/variables";
 @import "./base/base.scss";
 
-$border-radius: 35px;
+$border-radius: 15px;
+
 
 @mixin display-flex {
     display: flex;
@@ -34,6 +35,9 @@ body
 }
 
 .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
     padding: 1rem;
@@ -43,16 +47,29 @@ body
     {
         font-family: 'shrikhand', sans-serif;
         margin: 0;
+        font-weight: 100;
+    }
+
+    &__arrow {
+        font-size: 1.5rem;
+        position: absolute;
+        left: 2rem;
+        top: 1.7rem;
     }
 }
 
-.location {
+.local {
     @include display-flex;
     flex-direction: row;
     background-color: #eaeaea;
+    font-size: 1.2rem;
     
     &__icon{
+        margin: 0 1rem 0.2rem 0;  
+    }
 
+    &__paragraphe {
+        margin-right: 0.5rem;
     }
 }
 
@@ -75,27 +92,38 @@ body
         padding: 1rem 2rem;
         color: #fff;
         border-radius: 25px;
+        box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
     }
 }
 
+.block {
+    margin: auto;
+    position: relative;
+}
+
 .guide {
-    display: flex;
-    flex-direction: column;
+    padding: 2rem 1rem;
+
+    &__title {
+        margin-bottom: 2rem;
+    }
+
     &__list {
         counter-reset: compteListe;
-        width: 80%;
+        padding: 0;
+        margin: 0;
 
 
     }
 
     &__element {
-        @include box-shadow;
         display: flex;
-        padding: 0.5rem;
-        margin-bottom: 1rem;
+        padding: 1.6rem;
+        margin: 0 0 1.5rem 1rem;
         border-radius: 25px;
         background-color: #f6f6f6;
         position: relative;
+        box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.15);
         &::before{
             counter-increment: compteListe;
             content: counter(compteListe) " ";
@@ -105,21 +133,36 @@ body
             height: 1.5rem;
             width: 1.5rem;
             left: -1rem;
-            margin: 1rem auto;
             background-color: #9356dc;
             color: #fff;
             border-radius: 15px;
             position: absolute;
         }
+
+        &:hover{
+            background-color: rgba(147,86,220,0.2);
+
+            & .guide__icon{
+                color: rgba(147,86,220, 255);
+            }
+        }
+    }
+
+    &__paragraphe {
+        margin: 0;
     }
 
     &__icon {
-
+        margin-right: 1rem;
+        color: #7e7e7e;
+        font-size: 1.3rem;
     }
 }
 
 .etablissements{
-    @include display-flex;
+    background-color: #f6f6f6;
+    padding: 2rem 1rem;
+
     &__title {
 
     }
@@ -127,21 +170,19 @@ body
 
 .restaurants {
     @include display-flex;
-    background-color: #f6f6f6
 }
 
 .restaurant {
     @include box-shadow;
-    width: 85%;
     height: 20%;
     border-radius: $border-radius;
-    margin-bottom: 5%;
+    margin-bottom: 1.5rem;
     position: relative;
 
     &__img {
         border-radius: $border-radius $border-radius 0 0;
         width: 40rem;
-        height: 5rem;
+        height: 10rem;
         max-width: 100%;
     }
 
@@ -158,48 +199,136 @@ body
 
     }
 
-    &__title {
+    &__txt {
+        padding: 1rem;
+    }
 
+    &__title {
+        margin: 0 0 0.2rem 0;
+        font-size: 1.3rem;
     }
 
     &__paragraph {
-
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 300;
     }
 
     &__icon {
-
+    position: relative;
+    display: flex;
     }
 
     &__icon-1 {
-
+        position: absolute;
+        bottom: 2rem;
+        right: 1rem;
     }
 
     &__icon-2 {
-
+        position: absolute;
+        bottom: 2rem;
+        right: 3rem;
     }
 }
 
 .footer {
     background-color: #353535;
-    &__tite-omf {
+    padding: 1rem;
 
+    &__title-omf {
+        font-family: 'Shrikhand';
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 100;
     }
 
     &__list {
-
+        padding: 0;
     }
 
     &__element {
-
+        margin-bottom: 1rem;
+        
     }
 
     &__icon {
-
+        width: 1rem;
+        margin-right: 0.3rem;
+        color: #fff;
     }
 
     &__link {
-
+        color: #fff;
     }
 }
+//menus
+
+.menu-page
+{
+    background: #f6f6f6;
+}
+
+.top-img__img {
+    height: 15rem;
+    width: 100%;
+    max-width: 100%;
+}
+
+.menu {
+    position: relative;
+    padding: 1rem;
+    margin-top: -2.5rem;
+    border-radius: 35px 35px 0 0;
+    background: #f6f6f6;
+    
+    &__title {
+    font-family: 'Shrikhand', sans-serif;
+    font-size: 1.5rem;
+    margin: 0.7rem;
+    font-weight: 100;
+    }
+}
+
+.listmenu
+{
+    padding: 0 1rem;
+
+    &__title {
+        text-transform: uppercase;
+        font-weight: 300;
+        position: relative;
+        padding-bottom: 0.5rem;
+        
+        &::after {
+            content: "";
+            position: absolute;
+            width: 3rem;
+            height: 0.2rem;
+            background-color: #99e2d0;
+            left: 0;
+            bottom: 0;
+        }
+    }
+}
+
+.item {
+    display: flex;
+    padding: 1rem;
+    background: #fff;
+    margin: 1rem 0;
+
+    &__txt {
+        flex-wrap: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+}
+
+.item {
+
+}
+
 
 
