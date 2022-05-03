@@ -182,6 +182,12 @@ body
         color: #fff;
         border-radius: 25px;
         box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+
+        &:hover {
+            opacity: 0.8;
+            box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+
+        }
     }
 }
 
@@ -423,6 +429,18 @@ body
     margin: 1rem 0;
     border-radius: 15px;
     background: #fff;
+    animation: anim-menu 2s;
+
+    @keyframes anim-menu {
+        0% {
+            opacity: 0;
+            margin: 2rem 0 2rem 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
 
     &__txt {
         width: 100%;
@@ -497,7 +515,7 @@ body
     justify-content: center;
     align-items: center;
 
-    &__button {
+    &__btn {
         background-image: linear-gradient(#e972da, #a45cdc);
         padding: 1rem 3rem;
         margin-bottom: 3rem;
@@ -507,6 +525,13 @@ body
         border-radius: 25px;
         box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
         cursor: pointer;
+
+        &:hover {
+            opacity: 0.8;
+            box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+
+        }
+
     }
 }
 
