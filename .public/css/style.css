@@ -170,7 +170,7 @@ body {
   font-size: 1.2rem;
   font-weight: 300;
 }
-.restaurant__icon {
+.restaurant__icons {
   position: relative;
   display: flex;
 }
@@ -182,7 +182,21 @@ body {
 .restaurant__icon-2 {
   position: absolute;
   bottom: 2rem;
-  right: 3rem;
+  right: 1rem;
+  opacity: 0;
+  /*&__icon-active:active {
+      opacity: 1;
+      background: -webkit-linear-gradient(#e972da, #a45cdc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+  }*/
+}
+.restaurant__icon-2:hover {
+  opacity: 1;
+  background: -webkit-linear-gradient(#e972da, #a45cdc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: ease-in-out 0.2s;
 }
 
 .footer {
@@ -261,6 +275,7 @@ body {
   background: #fff;
 }
 .item__txt {
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   flex: auto;
@@ -268,22 +283,52 @@ body {
 .item__title {
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0;
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
 .item__paragraphe {
   overflow: hidden;
   text-overflow: ellipsis;
   margin: 0;
+  font-weight: 300;
 }
 .item__price {
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
-  margin: 0;
+  margin: 0 1rem 0 0;
   padding-left: 0.3rem;
 }
 .item__price p {
   margin: 0;
+  font-weight: 600;
+}
+.item__div-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 0;
+  background: #99e2d0;
+  border-radius: 0 15px 15px 0;
+  margin: -1rem -1rem -1rem 0;
+}
+.item:hover .item__div-check {
+  width: 40%;
+  transition: ease-in-out 0.5s;
+}
+.item:hover .item__check {
+  opacity: 1;
+  transform: rotate(360deg);
+  transition: 0.5s;
+}
+.item__check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  color: #fff;
+  font-size: 2rem;
 }
 
 .combutton {
@@ -293,8 +338,9 @@ body {
 }
 .combutton__button {
   background-image: linear-gradient(#e972da, #a45cdc);
-  padding: 1rem 2rem;
+  padding: 1rem 3rem;
   margin-bottom: 3rem;
+  font-size: 1rem;
   color: #fff;
   border: none;
   border-radius: 25px;
