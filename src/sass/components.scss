@@ -29,7 +29,7 @@
         }
     }
   }
-  
+
   .bar {
     width: 10px;
     height: 70px;
@@ -366,7 +366,7 @@
     &__check {
         @include display-flex;
         opacity: 0;
-        color: #FFF;
+        color: $color-block;
         font-size: 2rem;
     }
 }
