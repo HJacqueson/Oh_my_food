@@ -1,4 +1,4 @@
-//start Loader
+//loader
 
 .loader {  
     @include display-flex;
@@ -82,15 +82,12 @@
     }
 }
 
-//end of Loader
-
-//start Main
-    //index
+//index
 .local {
     @include display-flex;
     flex-direction: row;
-    background-color: #EAEAEA;
-    font-size: 1.2rem;
+    background-color: $color-localisation-background;
+    font-size: nth($font-size, 2);
     
     &__icon{
         margin: 0 1rem 0.2rem 0;  
@@ -133,6 +130,11 @@
         counter-reset: compteListe;
         padding: 0;
         margin: 0;
+        @media only screen and (min-width: 768px){
+            @include display-flex;
+            justify-content: space-between;
+            padding: 2rem;
+        }
     }
     &__element {
         display: flex;
@@ -142,6 +144,9 @@
         background-color: $color-background;
         position: relative;
         @include box-shadow ($size-shadow, $color-shadow-light);
+        @media only screen and (min-width: 768px){
+            margin: 1rem;
+        }
         &::before{
             counter-increment: compteListe;
             content: counter(compteListe) " ";
@@ -167,8 +172,8 @@
     }
     &__icon {
         margin-right: 1rem;
-        color: #7E7E7E;
-        font-size: 1.3rem;
+        color: $color-icon;
+        font-size: nth($font-size, 3);
     }
 }
 
@@ -180,6 +185,10 @@
 .restaurants {
     @include display-flex;
     flex-direction: column;
+    @media only screen and (min-width: 768px){
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
 }
 
 .restaurant {
@@ -188,6 +197,11 @@
     border-radius: $border-radius;
     margin-bottom: 1.5rem;
     position: relative;
+    
+    @media only screen and (min-width: 768px){
+        max-width: 20rem;
+        margin: 2rem;
+    }
 
     &__img {
         border-radius: $border-radius $border-radius 0 0;
@@ -208,184 +222,25 @@
     }
     &__title {
         margin: 0 0 0.2rem 0;
-        font-size: 1.3rem;
+        font-size: nth($font-size, 3);
     }
 
     &__paragraph {
         margin: 0;
-        font-size: 1.2rem;
+        font-size: nth($font-size, 2);
         font-weight: 300;
     }
     &__icons {
     position: relative;
     display: flex;
     }
-    &__icon-1 {
-        position: absolute;
-        bottom: 2rem;
-        right: 1rem;
-    }
-    &__icon-2 {
-        position: absolute;
-        bottom: 2rem;
-        right: 1rem;
-        opacity: 0;;
-
-        &:hover {
-            opacity: 1;
-            background: -webkit-linear-gradient($color-secondary, $color-primary);
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: ease-in-out 0.17s;
-        }
-
-    /*&__icon-active:active {
-        opacity: 1;
-        background: -webkit-linear-gradient(#e972da, #a45cdc);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }*/
-    }
-}
-
-    //menus
-
-.menu-page
-{
-    background: $color-background;
-}
-
-.top-img__img {
-    height: 15rem;
-    width: 100%;
-    max-width: 100%;
-}
-
-.menu {
-    position: relative;
-    padding: 1rem;
-    margin-top: -2.5rem;
-    border-radius: ($border-radius + 20px) ($border-radius + 20px) 0 0;
-    background: $color-background;
-    
-    &__title {
-    font-family: 'Shrikhand', sans-serif;
-    font-size: 1.5rem;
-    margin: 0.7rem;
-    font-weight: 100;
-    }
-}
-
-.listmenu
-{
-    padding: 0 1rem 0.5rem 1rem;
-
-    &__title {
-        text-transform: uppercase;
-        font-weight: 300;
-        position: relative;
-        padding-bottom: 0.5rem;
-        
-        &::after {
-            content: "";
-            position: absolute;
-            width: 3rem;
-            height: 0.2rem;
-            background-color: $color-adjunt-1;
-            left: 0;
-            bottom: 0;
-        }
-    }
-}
-
-.item {
-    display: flex;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: $border-radius;
-    background: $color-block;
-    @include box-shadow;
-    animation: anim-menu 2s;
-    @keyframes anim-menu {
-        0% {
+    &__icon {
+        @include heart-icon;
+        &--mod{
             opacity: 0;
-            margin: 2rem 0 2rem 0;
         }
-        100% {
-            opacity: 1;
-        }
-    }
-    &__txt {
-        width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        flex: auto;
-    }
-    &__title {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin: 0 0 0.5rem 0;
-        font-size: 1.2rem;
-        font-weight: 500;
-    }
-    &__paragraphe {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin: 0;
-        font-weight: 300;
-    }
-    &__price {
-        display: flex;
-        justify-content: flex-end;
-        align-items: flex-end;
-        margin: 0 1rem 0 0;
-        padding-left: 0.3rem;
-        &__span {
-            margin: 0;
-            font-weight: 600;
-        }   
-    }
-    &__div-check {
-        @include display-flex;
-        width: 0;
-        background: $color-adjunt-1;
-        border-radius: 0 $border-radius $border-radius 0;
-        margin: -1rem -1rem -1rem 0;    
-    }    
-    &:hover{ 
-        & .item__div-check{
-            width: 40%;
-            transition: ease-in-out 0.5s;
-        }
-        & .item__check{
-            opacity: 1;
-            transform: rotate(360deg);
-            transition: 0.5s;
-        }
-    }
-    &__check {
-        @include display-flex;
-        opacity: 0;
-        color: $color-block;
-        font-size: 2rem;
-    }
-}
-
-.combutton {
-    @include display-flex;
-
-    &__btn {
-        @include btn;
-
-        &--btn-com{
-        padding: 1rem 3rem;
-        margin-bottom: 3rem;
-        font-size: 1rem;
-        }
-        
         &:hover {
-            opacity: 0.8;
-            @include box-shadow ($size-shadow, $color-shadow-darker);
+            @include icon-hover;
         }
     }
 }

@@ -7,11 +7,11 @@
    
     &__title-omf
     {
-        font-family: 'shrikhand', sans-serif;
+        font-family: $font-family-logo-restaurant;
         margin: 0;
         font-weight: 100;
     }
-    &--arrow {
+    &__arrow {
         font-size: 1.5rem;
         position: absolute;
         left: 2rem;
@@ -20,20 +20,29 @@
 }
 
 .footer {
-    background-color: #353535;
+    background-color: $color-footer-background;
     padding: 1rem;
 
     &__title-omf {
-        font-family: 'Shrikhand';
+        font-family: $font-family-logo-restaurant;
         color: $color-block;
         font-size: 1.2rem;
         font-weight: 100;
+        @media only screen and (min-width: 768px){
+            text-align: center;
+        }
     }
     &__list {
         padding: 0;
+        @media only screen and (min-width: 768px){
+            @include display-flex;
+        }   
     }
     &__element {
-        margin-bottom: 1rem;   
+        margin-bottom: 1rem;
+        @media only screen and (min-width: 768px){
+            margin: 2rem;
+        }
     }
     &__icon {
         width: 1rem;
