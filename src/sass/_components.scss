@@ -31,6 +31,9 @@
     font-size: nth($font-size, 4);
     margin: 0.7rem;
     font-weight: 100;
+    @media only screen and (min-width:768px) {
+        font-size: nth($font-size, 5);
+    }
     }
     &__icons {
         position: relative;
