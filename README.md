@@ -1,4 +1,4 @@
-# Oh_my_food
+# Ohmyfood
 Projet 3 de la formation Développeur Web OpenClassrooms. Objectifs :
 
 * développer un site 100% mobile qui répertorie les menus de restaurants gastronomiques
