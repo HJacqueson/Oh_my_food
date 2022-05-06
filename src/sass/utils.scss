@@ -1,0 +1,32 @@
+$border-radius: 15px;
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-background: #F6F6F6;
+$color-adjunt-1: #99E2D0;
+$color-adjunt-2: #1B6150;
+$color-block: #FFF;
+$size-shadow: 0.25rem 0.25rem 10px;
+$color-shadow-light: rgba(0, 0, 0, 0.15);
+$color-shadow-dark: rgba(0, 0, 0, 0.25);
+$color-shadow-darker: rgba(0, 0, 0, 0.5);
+
+@mixin display-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin box-shadow ($size: $size-shadow, $color: $color-shadow-light){
+    box-shadow: $size $color;
+}
+
+@mixin btn {
+    background-image: linear-gradient($color-secondary, $color-primary);
+    color: $color-block;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: $border-radius + 10px;
+    @include box-shadow ($size-shadow, $color-shadow-dark);
+    cursor: pointer;
+}
