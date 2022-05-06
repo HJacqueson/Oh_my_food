@@ -4,8 +4,8 @@
   "description": "Projet numéro 3 de la formation Développement Web d'OpenClassrooms",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./src/sass/main.scss:.public/css/style.css",
-    "prefix": "postcss .public/css/style.css --use autoprefixer -d .public/css/prefixed/"
+    "sass": "sass --watch ./src/sass/main.scss:./css/style.css",
+    "prefix": "postcss ./css/style.css --use autoprefixer -d ./css/prefixed/"
   },
   "repository": {
     "type": "git",
