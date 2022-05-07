@@ -192,11 +192,6 @@ body {
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.15);
   animation: anim-menu 2s;
 }
-@media only screen and (min-width: 768px) {
-  .item {
-    min-width: 40rem;
-  }
-}
 @keyframes anim-menu {
   0% {
     opacity: 0;
@@ -204,6 +199,11 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .item {
+    min-width: 40rem;
   }
 }
 .item__txt {

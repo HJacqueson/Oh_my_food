@@ -1,34 +1,48 @@
+//basic colors
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
-$color-background: #F6F6F6;
+//load-bars & "new" incart colors 
 $color-adjunt-1: #99E2D0;
 $color-adjunt-2: #1B6150;
+//restaurant & dishes blocks color
 $color-block: #FFF;
-$color-footer-background: #353535;
+//localisation section background color 
 $color-localisation-background: #EAEAEA;
+//general section background color
+$color-background: #F6F6F6;
+//footer background color
+$color-footer-background: #353535;
+//guide icons color
 $color-icon: #7E7E7E;
+//link color
 $color-link: #000;
+//font families colors
 $font-family-logo-restaurant: 'Shrikhand', sans-serif;
 $font-family-body: 'Roboto', sans-serif;
+//border
 $border-radius: 15px;
+//shadow boxes settings
 $size-shadow: 0.25rem 0.25rem 10px;
 $color-shadow-light: rgba(0, 0, 0, 0.15);
 $color-shadow-dark: rgba(0, 0, 0, 0.25);
 $color-shadow-darker: rgba(0, 0, 0, 0.5);
+//different font-size
 $font-size: (1rem, 1.2rem, 1.3rem, 1.5rem, 2rem, 3rem);
 
-@mixin display-flex {
+//settings mixins
+
+@mixin display-flex { //display block mixin
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-@mixin box-shadow ($size: $size-shadow, $color: $color-shadow-light){
+@mixin box-shadow ($size: $size-shadow, $color: $color-shadow-light){ //shadow boxes mixin
     box-shadow: $size $color;
 }
 
-@mixin btn {
+@mixin btn { //button mixin
     background-image: linear-gradient($color-secondary, $color-primary);
     color: $color-block;
     padding: 1rem 2rem;
@@ -38,16 +52,115 @@ $font-size: (1rem, 1.2rem, 1.3rem, 1.5rem, 2rem, 3rem);
     cursor: pointer;
 }
 
-@mixin heart-icon {
+@mixin heart-icon { //heart icon positions mixin
     position: absolute;
     bottom: 2rem;
     right: 1rem;
 }
 
-@mixin icon-hover{
+//animation mixins
+
+@mixin icon-hover-animation{ //heart animation mixin
     opacity: 1;
     background: -webkit-linear-gradient($color-secondary, $color-primary);
     background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: ease-in-out 0.17s;
+}
+
+@mixin emergence-hover-animation { //dishes emergence animation mixin
+    animation: anim-menu 2s;
+    @keyframes anim-menu {
+        0% {
+            opacity: 0;
+            margin: 2rem 0 2rem 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+}
+
+@mixin div-check-emergence { // green block emergence & check rotate animation mixin
+    & .item__div-check{
+        width: 40%;
+        transition: ease-in-out 0.5s;
+    }
+    & .item__check{
+        opacity: 1;
+        transform: rotate(360deg);
+        transition: 0.5s;
+    }
+}
+
+//loader animation mixins
+
+@mixin background-loader-animation { //background loader dissipation animation mixin
+    animation: opacity 3s forwards ease-out;
+
+    @keyframes opacity {
+        0% {
+            transform: translateY(0px);
+            opacity: 1;   
+        }
+        50% {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+        75% {
+            transform: translateY(0px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(-2000px);
+            opacity: 0;
+        }
+    }
+}
+
+@mixin bar-delay { //bars delay mixins
+    .bar1 {
+    animation-delay: 0.1s;
+    }
+    .bar2 {
+    animation-delay: 0.2s;
+    }
+    .bar3 {
+    animation-delay: 0.3s;
+    }
+    .bar4 {
+    animation-delay: 0.4s;
+    }
+    .bar5 {
+    animation-delay: 0.5s;
+    }
+    .bar6 {
+    animation-delay: 0.6s;
+    }
+    .bar7 {
+    animation-delay: 0.7s;
+    }
+    .bar8 {
+    animation-delay: 0.8s;
+    }
+}
+
+@mixin keyframes-load-bar { // load-bars keyframes mixin
+    @keyframes loader {
+        0% {
+          transform: scaleY(0.1);
+          background: $color-adjunt-1;
+          opacity: 1;
+        }
+        50% {
+          transform: scaleY(1);
+          background: $color-adjunt-2;
+          opacity: 0.5;
+        }
+        100% {
+          transform: scaleY(0.1);
+          background: transparent;
+          opacity: 0;
+        }
+    }
 }

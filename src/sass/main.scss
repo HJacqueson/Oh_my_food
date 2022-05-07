@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap');
-@import "./utils.scss";
-@import "./base.scss";
-@import "./layout.scss";
-@import "./components.scss";
-@import "./pages.scss"
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Shrikhand&display=swap'); //font, Shrikhand and Robot
+@import "./utils.scss"; //variables, mixins, animation mixins
+@import "./base.scss"; //after, html, body, link
+@import "./layout.scss"; //header, footer
+@import "./components.scss"; //reusable blocks
+@import "./pages.scss" //one page blocks (loader, index)

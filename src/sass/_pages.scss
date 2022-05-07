@@ -8,26 +8,7 @@
     position: fixed;
     z-index: 9999;
     background-image: linear-gradient(50deg, $color-secondary, $color-primary);
-    animation: opacity 3s forwards ease-out;
-
-    @keyframes opacity {
-        0% {
-            transform: translateY(0px);
-            opacity: 1;   
-        }
-        50% {
-            transform: translateY(0px);
-            opacity: 1;
-        }
-        75% {
-            transform: translateY(0px);
-            opacity: 0;
-        }
-        100% {
-            transform: translateY(-2000px);
-            opacity: 0;
-        }
-    }
+    @include background-loader-animation; //background loader dissipation animation mixin
   }
 
   .bar {
@@ -40,47 +21,8 @@
     border-top-left-radius: $border-radius + 5px;
     animation: loader 1.2s linear infinite, ;
   }
-  .bar1 {
-    animation-delay: 0.1s;
-  }
-  .bar2 {
-    animation-delay: 0.2s;
-  }
-  .bar3 {
-    animation-delay: 0.3s;
-  }
-  .bar4 {
-    animation-delay: 0.4s;
-  }
-  .bar5 {
-    animation-delay: 0.5s;
-  }
-  .bar6 {
-    animation-delay: 0.6s;
-  }
-  .bar7 {
-    animation-delay: 0.7s;
-  }
-  .bar8 {
-    animation-delay: 0.8s;
-  }
-  @keyframes loader {
-    0% {
-      transform: scaleY(0.1);
-      background: $color-adjunt-1;
-      opacity: 1;
-    }
-    50% {
-      transform: scaleY(1);
-      background: $color-adjunt-2;
-      opacity: 0.5;
-    }
-    100% {
-      transform: scaleY(0.1);
-      background: transparent;
-      opacity: 0;
-    }
-}
+  @include bar-delay; //bars delay mixins
+  @include keyframes-load-bar; // load-bars keyframes mixin
 
 //index
 .local {
@@ -109,7 +51,7 @@
         margin-bottom: 2rem;
     }
     &__btn {
-        @include btn;
+        @include btn; //button mixin
        
 
         &:hover {
@@ -147,7 +89,7 @@
         @media only screen and (min-width: 768px){
             margin: 1rem;
         }
-        &::before{
+        &::before{ //purple number circle settings in tuto list
             counter-increment: compteListe;
             content: counter(compteListe) " ";
             @include display-flex;
@@ -231,16 +173,16 @@
         font-weight: 300;
     }
     &__icons {
-    position: relative;
-    display: flex;
+        position: relative;
+        display: flex;
     }
     &__icon {
-        @include heart-icon;
+        @include heart-icon; //heart icons position mixin
         &--mod{
             opacity: 0;
         }
         &:hover {
-            @include icon-hover;
+            @include icon-hover-animation; //heart animation mixin
         }
     }
 }

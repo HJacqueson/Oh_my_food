@@ -8,7 +8,7 @@
         padding: 3rem;
     }
    
-    &__title-omf
+    &__title-omf //logo ohmyfood
     {
         font-family: $font-family-logo-restaurant;
         margin: 0;
@@ -17,7 +17,7 @@
             font-size: nth($font-size, 6);
         }
     }
-    &__arrow {
+    &__arrow { //back arrow
         font-size: nth($font-size, 4);
         position: absolute;
         left: 2rem;
@@ -29,7 +29,7 @@
     background-color: $color-footer-background;
     padding: 1rem;
 
-    &__title-omf {
+    &__title-omf { //logo ohmyfood
         font-family: $font-family-logo-restaurant;
         color: $color-block;
         font-size: nth($font-size, 2);
@@ -38,24 +38,24 @@
             text-align: center;
         }
     }
-    &__list {
+    &__list { //restaurants list
         padding: 0;
         @media only screen and (min-width: 768px){
             @include display-flex;
         }   
     }
-    &__element {
+    &__element { //block restaurant
         margin-bottom: 1rem;
         @media only screen and (min-width: 768px){
             margin: 2rem;
         }
     }
-    &__icon {
+    &__icon { //icons footer
         width: 1rem;
         margin-right: 0.3rem;
         color: $color-block;
     }
-    &__link {
+    &__link { //link to restaurant page
         color: $color-block;
     }
 }

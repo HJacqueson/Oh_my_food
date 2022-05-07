@@ -5,7 +5,7 @@
     background: $color-background;
 }
 
-.top-img__img {
+.top-img__img { //restaurant image
     height: 15rem;
     width: 100%;
     max-width: 100%;
@@ -26,7 +26,7 @@
         padding: 3rem;
     }
     
-    &__title {
+    &__title { //restaurant name in Shrikhand
     font-family: $font-family-logo-restaurant;
     font-size: nth($font-size, 4);
     margin: 0.7rem;
@@ -35,22 +35,22 @@
         font-size: nth($font-size, 5);
     }
     }
-    &__icons {
+    &__icons { 
         position: relative;
         display: flex;
     }
-    &__icon {
-        @include heart-icon;
+    &__icon { //heart icon
+        @include heart-icon; //heart icons position
         &--mod{
         opacity: 0;
         }
-        &:hover {
-            @include icon-hover;
+        &:hover { 
+            @include icon-hover-animation; //heart animation mixin
         }
     }
 }
 
-.listmenu
+.listmenu //dishes list
 {
     padding: 0 1rem 0.5rem 1rem;
     @media only screen and (min-width: 768px) {
@@ -64,7 +64,7 @@
         position: relative;
         padding-bottom: 0.5rem;
         
-        &::after {
+        &::after { //title green bottom border
             content: "";
             position: absolute;
             width: 3rem;
@@ -80,26 +80,18 @@
     }
 }
 
-.item {
+.item { //dish
     display: flex;
     padding: 1rem;
     margin: 1rem 0;
     border-radius: $border-radius;
     background: $color-block;
     @include box-shadow;
-    animation: anim-menu 2s;
+    @include emergence-hover-animation; //dishes emergence animation mixin
     @media only screen and (min-width: 768px) {
         min-width: 40rem;
     }
-    @keyframes anim-menu {
-        0% {
-            opacity: 0;
-            margin: 2rem 0 2rem 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
+
     &__txt {
         width: 100%;
         white-space: nowrap;
@@ -130,7 +122,7 @@
             font-weight: 600;
         }   
     }
-    &__div-check {
+    &__div-check { //dish green hide right block
         @include display-flex;
         width: 0;
         background: $color-adjunt-1;
@@ -139,17 +131,9 @@
     }    
     &:hover{ 
         cursor: pointer;
-        & .item__div-check{
-            width: 40%;
-            transition: ease-in-out 0.5s;
-        }
-        & .item__check{
-            opacity: 1;
-            transform: rotate(360deg);
-            transition: 0.5s;
-        }
+        @include div-check-emergence; // green block emergence & check rotate animation mixin
     }
-    &__check {
+    &__check { //check icon settings
         @include display-flex;
         opacity: 0;
         color: $color-block;
@@ -161,7 +145,7 @@
     @include display-flex;
 
     &__btn {
-        @include btn;
+        @include btn; //button mixin
 
         &--btn-com{
         padding: 1rem 3rem;
