@@ -9,13 +9,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HJacqueson/Oh_my_food.git"
+    "url": "git+https://github.com/HJacqueson/ohmyfood.git"
   },
   "author": "Hervé",
   "license": "ISC",
   "browserslist": "last 4 versions",
   "bugs": {
-    "url": "https://github.com/HJacqueson/Oh_my_food/issues"
+    "url": "https://github.com/HJacqueson/ohmyfood/issues"
   },
-  "homepage": "https://github.com/HJacqueson/Oh_my_food#readme"
+  "homepage": "https://github.com/HJacqueson/ohmyfood#readme"
 }
