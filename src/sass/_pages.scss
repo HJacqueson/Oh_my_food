@@ -181,9 +181,6 @@
         &--mod{
             opacity: 0;
         }
-        &--place{
-            bottom: 1rem;
-        }
         &:hover {
             @include icon-hover-animation; //heart animation mixin
         }

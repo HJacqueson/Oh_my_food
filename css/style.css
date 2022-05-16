@@ -143,6 +143,9 @@ body {
 .menu__icon--mod {
   opacity: 0;
 }
+.menu__icon--place {
+  bottom: 1rem;
+}
 .menu__icon:hover {
   opacity: 1;
   background: -webkit-linear-gradient(#FF79DA, #9356DC);
