@@ -130,7 +130,8 @@
         width: 0;
         background: $color-adjunt-1;
         border-radius: 0 $border-radius $border-radius 0;
-        margin: -1rem -1rem -1rem 0;    
+        margin: -1rem -1rem -1rem 0;
+        transition: ease-in-out 0.5s;    
     }    
     &:hover{ 
         cursor: pointer;
@@ -141,6 +142,7 @@
         opacity: 0;
         color: $color-block;
         font-size: nth($font-size, 5);
+        transition: 0.5s;
     }
 }
 

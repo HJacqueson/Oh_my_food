@@ -38,13 +38,13 @@
             text-align: center;
         }
     }
-    &__list { //restaurants list
+    &__list { //footer list
         padding: 0;
         @media only screen and (min-width: 768px){
             @include display-flex;
         }   
     }
-    &__element { //block restaurant
+    &__element { //footer element list
         margin-bottom: 1rem;
         @media only screen and (min-width: 768px){
             margin: 2rem;
@@ -55,7 +55,7 @@
         margin-right: 0.3rem;
         color: $color-block;
     }
-    &__link { //link to restaurant page
+    &__link { //footer links mail
         color: $color-block;
     }
 }

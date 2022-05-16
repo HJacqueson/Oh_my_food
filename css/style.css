@@ -247,18 +247,17 @@ body {
   background: #99E2D0;
   border-radius: 0 15px 15px 0;
   margin: -1rem -1rem -1rem 0;
+  transition: ease-in-out 0.5s;
 }
 .item:hover {
   cursor: pointer;
 }
 .item:hover .item__div-check {
   width: 40%;
-  transition: ease-in-out 0.5s;
 }
 .item:hover .item__check {
   opacity: 1;
-  transform: rotate(360deg);
-  transition: 0.5s;
+  transform: rotate(0deg);
 }
 .item__check {
   display: flex;
@@ -267,6 +266,7 @@ body {
   opacity: 0;
   color: #FFF;
   font-size: 2rem;
+  transition: 0.5s;
 }
 
 .combutton {
