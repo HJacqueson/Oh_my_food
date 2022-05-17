@@ -136,13 +136,16 @@
     &:hover{ 
         cursor: pointer;
         @include div-check-emergence; // green block emergence & check rotate animation mixin
+        
     }
     &__check { //check icon settings
         @include display-flex;
-        opacity: 0;
+        opacity: 1;
         color: $color-block;
         font-size: nth($font-size, 5);
-        transition: 0.5s;
+        transform: translate();
+        overflow: hidden;
+        //transition:  ease-in 0.5s;
     }
 }
 

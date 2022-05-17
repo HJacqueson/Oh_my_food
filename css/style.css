@@ -257,16 +257,18 @@ body {
 }
 .item:hover .item__check {
   opacity: 1;
-  transform: rotate(0deg);
+  transform: rotate(360deg);
+  transition: ease-in-out 0.5s;
 }
 .item__check {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
   color: #FFF;
   font-size: 2rem;
-  transition: 0.5s;
+  transform: translate();
+  overflow: hidden;
 }
 
 .combutton {
