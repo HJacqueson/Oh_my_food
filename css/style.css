@@ -256,7 +256,6 @@ body {
   width: 40%;
 }
 .item:hover .item__check {
-  opacity: 1;
   transform: rotate(360deg);
   transition: ease-in-out 0.5s;
 }
